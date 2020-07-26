@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" ng-app='LunchingApp'>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="scripts/LunchingApp.js"></script>
+    <title>Lunch Checker updated by REHCh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+  </head>
+<body>
+   <div class="container" ng-controller='LunchCheckController'>
+     <h1>Lunch Checker</h1>
+     <div>empty spaces are not being considered</div>
+     <div>Repeated values are not being considered</div>
+
+         <div class="form-group">
+             <input id="lunch-menu" type="text"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control"
+             ng-model="lunches">
+         </div>
+         <div class="form-group">
+             <button class="btn btn-default" ng-click="CheckifTooMuch()">Check If Too Much</button>
+         </div>
+         <div class="form-group message"  ng-style="LunchColor">
+           {{LunchMessage}}
+         </div>
+   </div>
+
+</body>
+</html>
