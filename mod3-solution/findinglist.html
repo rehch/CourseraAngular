@@ -1,0 +1,14 @@
+<div>
+    <ol>
+        <li ng-repeat="item in ctrNarrow.found">
+            {{item.name}} , {{item.short_name}}, {{item.description}}
+            <!--
+            <button ng-click="ctrNarrow.badRemove($index);">Bad Remove Item</button>
+            -->
+            <div>
+            <button ng-click="ctrNarrow.onRemove({index: $index});">Don't want this one!</button>
+            </div>
+        </li>
+    </ol>
+</div>
+<div class="error" ng-if="ctrNarrow.NothingFound()">{{ctrNarrow.Message}}</div>
