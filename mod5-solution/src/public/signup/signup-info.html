@@ -1,0 +1,66 @@
+<div class = "container">
+    <!--
+    <div class="panel panel-default">
+    
+    <fieldset >
+        <legend ><strong> Chu's Registration form </strong> </legend>
+-->                
+        <form name="myinfoForm" novalidate>
+            <input type="text" name = "firstname" placeholder="First Name" ng-model="reg.firstname" class="form-control"
+            required
+            >
+            <span ng-if="myinfoForm.firstname.$error.required && myinfoForm.firstname.$touched">First name is required</span>
+            <br>
+            <input type="text" name = "lastname" placeholder="Last Name" ng-model="reg.lastname" class="form-control"
+            required
+            >
+            <span ng-if="myinfoForm.lastname.$error.required && myinfoForm.lastname.$touched">Last name is required</span>
+            <br>
+            <input type="email" name="email" placeholder="Email"
+            ng-model="reg.email"
+            required class="form-control">
+            <span ng-if="myinfoForm.email.$invalid && myinfoForm.email.$touched">
+                Must be a valid email address: handle@domain format
+            </span>
+            <br>
+            <input type="text" name="phone" placeholder="Your Phone Number"
+            ng-model="reg.phone"
+            required
+            class="form-control"
+            pattern="(\d{3})-(\d{3})-(\d{4})"
+            >
+            <span ng-if="myinfoForm.phone.$error.required
+                && myinfoForm.phone.$touched">Phone Number is required</span>
+                <span ng-if="myinfoForm.phone.$touched &&
+                !myinfoForm.phone.$error.required &&
+                myinfoForm.phone.$invalid">10 Digits: xxx-xxx-xxxx</span>
+          </span>
+            <br>
+            <input type="text" name = "favorite" placeholder="Favorite Dish Code" ng-model="reg.favorite" class="form-control"
+            required
+            maxlength="3"
+            >
+            <span ng-if="myinfoForm.favorite.$error.required
+            && myinfoForm.favorite.$touched">Favorite menu is required</span>
+            </span>
+            <br>
+            <button
+                ng-disabled="myinfoForm.$invalid"
+                ng-click="reg.save()" class="btn btn-primary">Save
+            </button>
+
+            <div ng-if = reg.IsOk>
+                Your information has been saved.
+            </div>
+
+            <div ng-if = reg.DishNotFound>
+                No such menu number exists
+            </div>
+            
+        </form>
+<!--        
+    </fieldset>
+    
+    </div>
+    -->
+</div>

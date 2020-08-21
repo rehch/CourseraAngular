@@ -1,0 +1,31 @@
+<div ng-if="!Myi.userinformation">
+    Not Signed Up Yet. 
+    <a ui-sref="public.signup"> Sign up Now!</a>
+</div>
+
+<div class="container" ng-controller="MyinfoController as Myi" ng-if="Myi.userinformation">
+    <div>
+        <b>User Information</b>
+        <div>
+            <div>
+            First Name: {{Myi.userinformation.firstname}}
+            </div>
+            <div>
+            Last Name: {{Myi.userinformation.lastname}}
+            </div>
+            <div>
+            Email: {{Myi.userinformation.email}}
+            </div>
+            <div>
+                Phone: {{Myi.userinformation.phone}}
+            </div>
+        </div>
+        <div>
+            <b>Favorite Dish</b>
+            <br>
+            <menu-item ng-repeat="menuItem in Myi.favorites"
+            menu-item="menuItem">
+             </menu-item>
+        </div>
+    </div>
+</div>
